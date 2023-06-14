@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 df = pd.read_csv("cancer.csv",index_col="id")
 print(df)
 
@@ -32,3 +33,20 @@ print("\n Accedo solo a los datos de esa columna \n", col)
 
 #filtro por condiciones, en este caso que el radio sea mayor que 27u
 print("\n Filtro por \n", df[df["radius_mean"]>27])
+
+#agrupar por columnas
+print("Conteo de los tipos de cáncer")
+grupo = df["diagnosis"].groupby(df["diagnosis"]).count()
+print(grupo)
+grupo.plot(kind='pie')
+plt.show()
+
+#Máximo valores
+print("Máximo valores")
+maxi = df.groupby(df["diagnosis"]).max()
+print(maxi)
+
+#Mínimo valores
+print("Mínimo valores")
+mini = df.groupby(df["diagnosis"]).min()
+print(mini)
