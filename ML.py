@@ -42,7 +42,7 @@ grupo = df["diagnosis"].groupby(df["diagnosis"]).count()
 print(grupo)
 df["diagnosis"].value_counts().plot.pie(autopct='%1.1f%%', colors = ["lightgreen","pink"],labels=["Benignos","Malignos"],title="Tipos de Cáncer")
 plt.show()
-plt.savefig("tipos_cancer.png")
+#plt.savefig("tipos_cancer.jpg")
 
 #Máximo valores
 print("Máximo valores")
